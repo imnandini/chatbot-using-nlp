@@ -1,0 +1,51 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day","hi"],
+         "responses": ["Hi there, how can I helpyou today?"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "okay","ok","Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["My pleasure", "You're Welcome"],
+         "context": [""]
+        },
+        {"tag": "website",
+         "patterns": ["i am here for website","i need website","i want website","i want website for my company",
+         "i need website for my company"],
+         "responses": ["Can you tell me more about your which type of website you are looking for?"],
+         "context": [""]
+        },
+        {"tag": "app",
+        "patterns": ["i am here for app development","i need app for my company","i need app for my company",
+        "i want app","i need app"],
+        "responses": ["Great! What type of app are you looking for?"],
+        "context": [""]
+       },
+       {"tag": "apptype",
+       "patterns": ["i would like shopping app","i need grocery app","shopping app","app for my comapany",
+       "i need app for my company"],
+       "responses": ["Excellent choice! may i know your name?"],
+       "context": [""]
+      },
+      {"tag": "webtype",
+      "patterns": ["i would like shopping website","i need website for my company","i need shopping website",
+      "grocery website"],
+      "responses": ["Fantastic! may i know your name"],
+      "context": [""]
+     },
+     {"tag": "name",
+     "patterns": ["my name is (.*)"],
+     "responses": ["Hello, nice to meet you! Can you tell me your phone number?"],
+     "context": [""]
+    },
+     {"tag": "number",
+     "patterns": ["my phone number is (.*)","my number is (.*)"],
+     "responses": ["Thanks for providing your phone number. Our team will contact you shortly."],
+     "context": [""]
+    }
+]}

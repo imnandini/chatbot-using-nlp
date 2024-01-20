@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Demo</title>
+    <style>
+        /* Add your CSS styling here if needed */
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById('user-input').value;
+            
+            // Make a POST request to the Flask backend
+            fetch('http://127.0.0.1:5000/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: userInput,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the chatbot's response
+                var chatBox = document.getElementById('chat-box');
+                var userMessage = '<div>User: ' + userInput + '</div>';
+                var botMessage = '<div>Chatbot: ' + data.response + '</div>';
+                chatBox.innerHTML += userMessage + botMessage;
+                
+                // Clear the input field
+                document.getElementById('user-input').value = '';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
